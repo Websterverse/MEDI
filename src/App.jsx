@@ -6,6 +6,11 @@ import MedicalRecords from "./pages/records/index";
 import ScreeningSchedule from "./pages/ScreeningSchedule";
 import SingleRecordDetails from "./pages/records/single-record-details";
 import { useStateContext } from "./context";
+import { Buffer } from "buffer";
+
+// Polyfill buffer globally (only do this if buffer is needed globally)
+window.Buffer = Buffer;
+
 
 const App = () => {
   const { user, authenticated, ready, login, currentUser } = useStateContext();
